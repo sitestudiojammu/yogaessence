@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Yoga Essence · find your calm</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ----- DESIGN SYSTEM TOKENS: PINK + YELLOW ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #E83E8C;        /* vibrant pink */
+      --primary-dark: #B02A6F;    /* deep pink */
+      --primary-light: #FFD9E8;   /* soft pink */
+      --accent: #FFC107;          /* golden yellow */
+      --neutral-900: #111827;
+      --neutral-500: #6B7280;
+      --neutral-100: #F3F4F6;
+      --white: #FFFFFF;
+      --shadow-card: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+      --shadow-hover: 0 20px 30px -10px rgba(232,62,140,0.15);
+      --border-radius-card: 16px;
+      --border-radius-pill: 9999px;
+      --container-max: 1280px;
+      --section-pad: 80px;
+      --section-pad-mobile: 48px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--neutral-900);
+      background: var(--white);
+      line-height: 1.5;
+    }
+
+    h1, h2, h3, .display-font {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-padding {
+      padding: var(--section-pad) 0;
+    }
+    @media (max-width: 768px) {
+      .section-padding {
+        padding: var(--section-pad-mobile) 0;
+      }
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: var(--border-radius-pill);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      line-height: 1;
+      box-shadow: 0 4px 6px -2px rgba(232,62,140,0.2);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: scale(1.02);
+      box-shadow: 0 10px 15px -3px rgba(232,62,140,0.3);
+    }
+    .btn-primary:active {
+      transform: scale(0.98);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: var(--border-radius-pill);
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background: var(--primary-light);
+    }
+
+    .text-link {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .text-link:hover {
+      border-bottom-color: var(--primary);
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: box-shadow 0.3s;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    .badge {
+      background: var(--accent);        /* yellow badge */
+      color: var(--neutral-900);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .sticky-mobile-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--white);
+      padding: 12px 24px;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+      z-index: 40;
+      border-top: 1px solid var(--neutral-100);
+    }
+    .sticky-mobile-cta .btn-primary {
+      width: 100%;
+      text-align: center;
+    }
+    @media (max-width: 640px) {
+      .sticky-mobile-cta {
+        display: block;
+      }
+      body {
+        padding-bottom: 80px;
+      }
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      z-index: 50;
+      padding: 16px 24px;
+    }
+    .nav-container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--neutral-900);
+      font-weight: 500;
+      font-size: 15px;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--neutral-900);
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: var(--white);
+      z-index: 100;
+      padding: 40px 24px;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .mobile-menu a {
+      font-size: 24px;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--neutral-900);
+    }
+    .close-menu {
+      align-self: flex-end;
+      font-size: 32px;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 1024px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: 1fr; }
+    }
+
+    img.placeholder {
+      background: var(--neutral-100);
+      border-radius: 12px;
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+
+    .trust-bar {
+      background: var(--white);
+      padding: 24px 0;
+      border-bottom: 1px solid var(--neutral-100);
+    }
+
+    .faq-question {
+      background: var(--neutral-100);
+      padding: 18px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-answer {
+      padding: 0 24px 18px 24px;
+      color: var(--neutral-500);
+      display: none;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* Modal styles */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+    }
+    .modal-card {
+      background: white;
+      max-width: 450px;
+      width: 90%;
+      padding: 40px 30px;
+      border-radius: 32px;
+      box-shadow: 0 30px 50px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--neutral-500);
+    }
+    .modal-card h3 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .modal-card p {
+      color: var(--neutral-500);
+      margin-bottom: 24px;
+    }
+    .modal-card input {
+      width: 100%;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 50px;
+      font-size: 1rem;
+    }
+    .modal-card button {
+      width: 100%;
+    }
+
+    /* Map container */
+    .map-container {
+      width: 100%;
+      height: 380px;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+      margin: 40px 0 20px;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- STICKY MOBILE CTA (opens modal) -->
+<div class="sticky-mobile-cta">
+  <button class="btn-primary open-booking-modal" style="border:none; width:100%;">Book Free Session</button>
+</div>
+
+<!-- MOBILE MENU OVERLAY -->
+<div id="mobileMenu" class="mobile-menu">
+  <div class="close-menu" onclick="toggleMenu()">✕</div>
+  <a href="#">Classes</a>
+  <a href="#">About</a>
+  <a href="#">Pricing</a>
+  <a href="#">Online</a>
+  <a href="#">Blog</a>
+  <button class="btn-primary open-booking-modal" style="margin-top:20px; width:100%;">Book Free Session</button>
+</div>
+
+<!-- NAVIGATION (updated business name) -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div style="font-family: 'Playfair Display'; font-size: 1.8rem; font-weight: 700; color: var(--primary-dark);">Yoga <span style="color:var(--primary);">Essence</span></div>
+    <div class="nav-links">
+      <a href="#">Classes</a>
+      <a href="#">About</a>
+      <a href="#">Pricing</a>
+      <a href="#">Online</a>
+      <a href="#">Blog</a>
+    </div>
+    <div class="nav-cta">
+      <button class="btn-primary open-booking-modal" style="border:none; padding:10px 24px;">Book Free Session</button>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☯</div>
+  </div>
+</nav>
+
+<!-- HERO SECTION (CTA opens modal) -->
+<section style="position: relative; background: #1a2e2c; min-height: 80vh; display: flex; align-items: center; color: white;">
+  <div style="position: absolute; inset:0; background-image: url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center;"></div>
+  <!-- overlay with pink/yellow tint -->
+  <div style="position: absolute; inset:0; background: linear-gradient(to right, rgba(232,62,140,0.3), rgba(255,193,7,0.3));"></div>
+  <div class="container" style="position: relative; z-index: 2; width:100%;">
+    <div style="max-width: 700px;">
+      <h1 style="font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1.2;">Find Your Calm. Move Your Body. Transform Your Life.</h1>
+      <p style="font-size: 1.5rem; margin: 24px 0; opacity: 0.9;">In-studio and online yoga classes for all levels. Your first session is free.</p>
+      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <button class="btn-primary open-booking-modal" style="font-size: 1.2rem; padding: 16px 40px; border:none;">Claim Your Free Session →</button>
+        <a href="#" style="color: white; font-weight: 500; text-decoration: underline; text-underline-offset: 8px; align-self: center;">Browse all classes</a>
+      </div>
+      <div style="margin-top: 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <span style="color: var(--accent); letter-spacing: 4px;">★★★★★</span>
+        <span style="font-weight: 600;">Loved by 2,000+ students</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; color: var(--neutral-500);">
+    <span style="font-weight: 600;">As featured in</span>
+    <div style="display: flex; gap: 40px; flex-wrap: wrap; filter: grayscale(1); opacity: 0.7;">
+      <span style="font-weight: 600;">YOGA MANTRA</span>
+      <span style="font-weight: 600;">INDIAN WELLNESS</span>
+      <span style="font-weight: 600;">LIVE YOGA</span>
+      <span style="font-weight: 600;">ELEPHANT JOURNAL</span>
+    </div>
+  </div>
+</div>
+
+<!-- BENEFITS SECTION -->
+<section class="section-padding">
+  <div class="container">
+    <div class="grid-3">
+      <div class="card" style="text-align: center; border-top: 4px solid var(--accent);">
+        <div style="font-size: 3rem;">🧘</div>
+        <h3 style="margin: 16px 0 8px;">Expert Instructors</h3>
+        <p style="color: var(--neutral-500);">Certified teachers who meet you where you are.</p>
+      </div>
+      <div class="card" style="text-align: center; border-top: 4px solid var(--primary);">
+        <div style="font-size: 3rem;">🏠</div>
+        <h3 style="margin: 16px 0 8px;">Flexible Options</h3>
+        <p style="color: var(--neutral-500);">In-studio or stream from anywhere.</p>
+      </div>
+      <div class="card" style="text-align: center; border-top: 4px solid var(--accent);">
+        <div style="font-size: 3rem;">❤️</div>
+        <h3 style="margin: 16px 0 8px;">Real Results</h3>
+        <p style="color: var(--neutral-500);">Less stress, better sleep, stronger body.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASS SHOWCASE (View Schedule links removed) -->
+<section class="section-padding" style="background: var(--neutral-100);">
+  <div class="container">
+    <h2 style="font-size: 2.5rem; margin-bottom: 48px;">Classes for every body</h2>
+    <div class="grid-4">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?q=80&w=2070&auto=format&fit=crop" class="placeholder" style="aspect-ratio:1/1;" alt="hatha">
+        <div style="margin-top: 16px;"><span class="badge">Beginner</span></div>
+        <h3 style="margin: 12px 0 4px;">Hatha Yoga</h3>
+        <p style="color: var(--neutral-500);">Foundations & alignment.</p>
+        <!-- removed View Schedule link -->
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1593810450967-f9c42742e326?q=80&w=2070&auto=format&fit=crop" class="placeholder" style="aspect-ratio:1/1;" alt="vinyasa">
+        <div style="margin-top: 16px;"><span class="badge">All Levels</span></div>
+        <h3 style="margin: 12px 0 4px;">Vinyasa Flow</h3>
+        <p style="color: var(--neutral-500);">Dynamic, breath-led movement.</p>
+        <!-- removed View Schedule link -->
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop" class="placeholder" style="aspect-ratio:1/1;" alt="yin">
+        <div style="margin-top: 16px;"><span class="badge">Relax</span></div>
+        <h3 style="margin: 12px 0 4px;">Yin & Restorative</h3>
+        <p style="color: var(--neutral-500);">Deep relaxation, stress release.</p>
+        <!-- removed View Schedule link -->
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=2070&auto=format&fit=crop" class="placeholder" style="aspect-ratio:1/1;" alt="morning power">
+        <div style="margin-top: 16px;"><span class="badge">Energizing</span></div>
+        <h3 style="margin: 12px 0 4px;">Morning Power</h3>
+        <p style="color: var(--neutral-500);">30-min sessions to start your day.</p>
+        <!-- removed View Schedule link -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS section -->
+<section class="section-padding" style="background: var(--primary-light);">
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+      <h2 style="font-size: 2.5rem;">What our students say</h2>
+      <span style="background: white; padding: 8px 20px; border-radius: 40px; font-weight: 600;">⭐ 4.9/5 from 500+ reviews</span>
+    </div>
+    <div class="grid-3" style="margin-top: 40px;">
+      <div class="card">
+        <span style="color: var(--accent);">★★★★★</span>
+        <p style="margin: 16px 0;">"I went from never exercising to attending 4 classes a week. My anxiety has reduced so much."</p>
+        <div><span style="font-weight: 600;">Priya Sharma</span> · Mumbai</div>
+      </div>
+      <div class="card">
+        <span style="color: var(--accent);">★★★★★</span>
+        <p style="margin: 16px 0;">"The online classes mean I can practice at 6am before work. Truly life-changing."</p>
+        <div><span style="font-weight: 600;">Rahul Verma</span> · Delhi</div>
+      </div>
+      <div class="card">
+        <span style="color: var(--accent);">★★★★★</span>
+        <p style="margin: 16px 0;">"I was a complete beginner. The instructors made me feel welcome from day one."</p>
+        <div><span style="font-weight: 600;">Anjali Desai</span> · Bengaluru</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEET YOUR TEACHER (new section) -->
+<section class="section-padding" style="background: var(--white);">
+  <div class="container">
+    <h2 style="font-size: 2.5rem; margin-bottom: 40px;">Meet Your Teacher</h2>
+    <div style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 280px;">
+        <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=2070&auto=format&fit=crop" alt="Teacher Samantha Kaur" style="border-radius: 50%; width: 100%; max-width: 360px; aspect-ratio: 1/1; object-fit: cover; box-shadow: var(--shadow-hover); border: 4px solid var(--accent);">
+      </div>
+      <div style="flex: 2; min-width: 300px;">
+        <h3 style="font-size: 2.2rem; color: var(--primary-dark);">Samantha Kaur</h3>
+        <p style="color: var(--primary); font-weight: 600; font-size: 1.2rem; margin-bottom: 16px;">E-RYT 500, Yoga Therapist</p>
+        <p style="color: var(--neutral-500); margin-bottom: 20px; font-size: 1.1rem;">With over 15 years of teaching experience, Samantha combines traditional Hatha yoga with modern mindfulness practices. Her classes are known for being accessible, grounding, and often sprinkled with laughter. She believes yoga is for every body and every age.</p>
+        <p style="color: var(--neutral-500); font-style: italic; background: var(--primary-light); padding: 20px; border-radius: 40px;">"Yoga helped me heal after a back injury, and now I’m passionate about sharing that healing with others. I can't wait to meet you on the mat."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE OFFER LEAD MAGNET (yellow button) -->
+<section style="background: var(--primary-dark); color: white; padding: 80px 24px;">
+  <div class="container" style="text-align: center; max-width: 700px;">
+    <h2 style="font-size: 3rem; margin-bottom: 16px;">Your first session is completely free</h2>
+    <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 32px;">No experience needed. No commitment. Just show up.</p>
+    <button class="btn-primary open-booking-modal" style="background: var(--accent); color: #1e2a2a; padding: 16px 36px; font-size:1.2rem; border:none;">Claim Your Free Session →</button>
+  </div>
+</section>
+
+<!-- FAQ ACCORDION -->
+<section class="section-padding">
+  <div class="container" style="max-width: 800px;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 40px;">Questions? We've answers.</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)">I've never done yoga before — is this for me? <span>▼</span></div>
+        <div class="faq-answer">Absolutely! Our beginners’ classes are designed just for you. All levels welcome.</div>
+      </div>
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)">What do I need to bring? <span>▼</span></div>
+        <div class="faq-answer">Just yourself. We have mats and props, but feel free to bring your own.</div>
+      </div>
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)">Do you offer classes online? <span>▼</span></div>
+        <div class="faq-answer">Yes! Full digital library and live streams via our Online Studio membership.</div>
+      </div>
+      <div class="faq-item" style="margin-bottom: 16px;">
+        <div class="faq-question" onclick="toggleFaq(this)">Can I try before committing? <span>▼</span></div>
+        <div class="faq-answer">Of course. Your first class is free, and we have drop-in options.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE MAP SECTION -->
+<section class="section-padding" style="background: var(--neutral-100);">
+  <div class="container">
+    <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Find our studio</h2>
+    <p style="color: var(--neutral-500); max-width: 600px; margin-bottom: 24px;">We’re conveniently located in the heart of the city. Come visit us for a free session.</p>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps?q=Yoga+studio+India&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div style="display: flex; justify-content: center; margin-top: 16px;">
+      <a href="https://maps.app.goo.gl/L2S2d1RtLk7yLMWJ8" target="_blank" rel="noopener" class="btn-outline" style="display: inline-flex; align-items: center; gap: 8px;">
+        <i class="fas fa-map-marker-alt"></i> Open in Google Maps (exact location)
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (newsletter removed) -->
+<footer style="background: var(--neutral-100); padding: 60px 24px 24px;">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+      <div>
+        <div style="font-family: 'Playfair Display'; font-size: 2rem; font-weight: 700; color: var(--primary-dark);">Yoga Essence</div>
+        <p style="margin: 16px 0; color: var(--neutral-500);">Accessible, transformative yoga for real life.</p>
+        <div style="display: flex; gap: 16px;">
+          <i class="fab fa-instagram"></i> <i class="fab fa-youtube"></i> <i class="fab fa-facebook"></i>
+        </div>
+      </div>
+      <div>
+        <h4>Classes</h4>
+        <ul style="list-style: none; margin-top: 16px;">
+          <li><a href="#" style="color: var(--neutral-500); text-decoration: none;">Schedule</a></li>
+          <li><a href="#" style="color: var(--neutral-500); text-decoration: none;">Online</a></li>
+          <li><a href="#" style="color: var(--neutral-500); text-decoration: none;">Workshops</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul style="list-style: none; margin-top: 16px;">
+          <li><a href="#" style="color: var(--neutral-500); text-decoration: none;">About</a></li>
+          <li><a href="#" style="color: var(--neutral-500); text-decoration: none;">Testimonials</a></li>
+          <li><a href="#" style="color: var(--neutral-500); text-decoration: none;">Contact</a></li>
+        </ul>
+      </div>
+      <!-- newsletter div removed -->
+    </div>
+    <hr style="margin: 48px 0 24px; border: 1px solid rgba(0,0,0,0.05);">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; color: var(--neutral-500);">
+      <span>© 2025 Yoga Essence. All rights reserved.</span>
+      <span>Privacy · Terms</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL POPUP for WhatsApp booking -->
+<div id="bookingModal" class="modal-overlay">
+  <div class="modal-card">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <h3>Book your free session</h3>
+    <p>We'll ping you on WhatsApp to confirm your slot.</p>
+    <input type="text" id="modalName" placeholder="Your name" required>
+    <input type="tel" id="modalWhatsapp" placeholder="WhatsApp number (with country code)" required>
+    <button class="btn-primary" id="sendWhatsAppBtn" style="width:100%;">Send via WhatsApp</button>
+    <p style="font-size:0.8rem; margin-top:16px;">🔒 Your details are safe.</p>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  // Toggle mobile menu
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+  }
+
+  // FAQ toggle
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    item.classList.toggle('active');
+    const span = el.querySelector('span');
+    span.innerHTML = item.classList.contains('active') ? '▲' : '▼';
+  }
+
+  // Modal logic
+  const modal = document.getElementById('bookingModal');
+  const openButtons = document.querySelectorAll('.open-booking-modal');
+  const nameInput = document.getElementById('modalName');
+  const whatsappInput = document.getElementById('modalWhatsapp');
+  const sendBtn = document.getElementById('sendWhatsAppBtn');
+
+  // Coach WhatsApp number (replace with actual)
+  const COACH_NUMBER = '919999999999'; // e.g., 919876543210 (without +)
+
+  function openModal() {
+    modal.style.display = 'flex';
+  }
+  function closeModal() {
+    modal.style.display = 'none';
+  }
+  // Close if overlay clicked
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeModal();
+  });
+
+  openButtons.forEach(btn => btn.addEventListener('click', openModal));
+
+  sendBtn.addEventListener('click', function() {
+    const name = nameInput.value.trim();
+    const wa = whatsappInput.value.trim();
+    if (!name || !wa) {
+      alert('Please fill both fields');
+      return;
+    }
+    // Basic WhatsApp number cleanup
+    const cleanWA = wa.replace(/[^0-9+]/g, '');
+    const message = `Hi, I'm ${name} and my WhatsApp is ${cleanWA}. I'd like to book a free yoga session.`;
+    const url = `https://wa.me/${COACH_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+    closeModal();
+    nameInput.value = '';
+    whatsappInput.value = '';
+  });
+
+  // close mobile menu when link clicked
+  document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('mobileMenu').style.display = 'none';
+    });
+  });
+</script>
+<style>
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</body>
+</html>
