@@ -652,14 +652,15 @@
   </div>
 </footer>
 
-<!-- MODAL POPUP for WhatsApp booking (with coach number updated) -->
+<!-- MODAL POPUP for WhatsApp booking (with coach number updated, removed country code hint) -->
 <div id="bookingModal" class="modal-overlay">
   <div class="modal-card">
     <span class="modal-close" onclick="closeModal()">&times;</span>
     <h3>Book your free session</h3>
     <p>Palvi will confirm your slot on WhatsApp.</p>
     <input type="text" id="modalName" placeholder="Your name" required>
-    <input type="tel" id="modalWhatsapp" placeholder="WhatsApp number (with country code)" required>
+    <!-- Removed '(with country code)' hint as requested -->
+    <input type="tel" id="modalWhatsapp" placeholder="WhatsApp number" required>
     <button class="btn-primary" id="sendWhatsAppBtn" style="width:100%;">Send via WhatsApp</button>
     <p style="font-size:0.8rem; margin-top:16px;">🔒 Your details are safe.</p>
   </div>
