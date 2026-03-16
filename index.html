@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Yoga Essence · find your calm</title>
+  <title>Yoga Essence · Palvi Gulati · Jammu</title>
   <!-- Google Fonts & Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +33,10 @@
       --container-max: 1280px;
       --section-pad: 80px;
       --section-pad-mobile: 48px;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -104,17 +108,6 @@
       background: var(--primary-light);
     }
 
-    .text-link {
-      color: var(--primary);
-      font-weight: 600;
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.2s;
-    }
-    .text-link:hover {
-      border-bottom-color: var(--primary);
-    }
-
     .card {
       background: var(--white);
       border-radius: var(--border-radius-card);
@@ -127,7 +120,7 @@
     }
 
     .badge {
-      background: var(--accent);        /* yellow badge */
+      background: var(--accent);
       color: var(--neutral-900);
       font-size: 0.75rem;
       font-weight: 600;
@@ -342,56 +335,88 @@
       height: 100%;
       border: 0;
     }
+    .business-address {
+      background: var(--primary-light);
+      padding: 20px 28px;
+      border-radius: 60px;
+      display: inline-block;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+    .contact-icon-row {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin: 16px 0;
+    }
+    .contact-icon-row a {
+      text-decoration: none;
+      color: var(--primary-dark);
+      font-weight: 500;
+      background: #fff0f5;
+      padding: 8px 20px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .timing-badge {
+      background: white; 
+      padding: 6px 20px; 
+      border-radius: 40px; 
+      font-weight: 600; 
+      color: var(--primary-dark);
+      display: inline-block;
+      margin-right: 12px;
+      margin-bottom: 10px;
+      border: 1px solid var(--primary-light);
+    }
   </style>
 </head>
 <body>
 
 <!-- STICKY MOBILE CTA (opens modal) -->
 <div class="sticky-mobile-cta">
-  <button class="btn-primary open-booking-modal" style="border:none; width:100%;">Book Free Session</button>
+  <button class="btn-primary open-booking-modal" style="border:none; width:100%;">📲 Book Free Session</button>
 </div>
 
-<!-- MOBILE MENU OVERLAY -->
+<!-- MOBILE MENU OVERLAY (updated links) -->
 <div id="mobileMenu" class="mobile-menu">
   <div class="close-menu" onclick="toggleMenu()">✕</div>
-  <a href="#">Classes</a>
-  <a href="#">About</a>
-  <a href="#">Pricing</a>
-  <a href="#">Online</a>
-  <a href="#">Blog</a>
-  <button class="btn-primary open-booking-modal" style="margin-top:20px; width:100%;">Book Free Session</button>
+  <a href="#classes-section" onclick="toggleMenu()">Programs</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#contact-section" onclick="toggleMenu()">Contact Us</a>
+  <button class="btn-primary open-booking-modal" style="margin-top:20px; width:100%;">📞 Book Free Session</button>
 </div>
 
-<!-- NAVIGATION (updated business name) -->
+<!-- NAVIGATION (updated links: About, Programs, Contact Us) -->
 <nav class="navbar">
   <div class="nav-container">
     <div style="font-family: 'Playfair Display'; font-size: 1.8rem; font-weight: 700; color: var(--primary-dark);">Yoga <span style="color:var(--primary);">Essence</span></div>
     <div class="nav-links">
-      <a href="#">Classes</a>
-      <a href="#">About</a>
-      <a href="#">Pricing</a>
-      <a href="#">Online</a>
-      <a href="#">Blog</a>
+      <a href="#about">About</a>
+      <a href="#classes-section">Programs</a>
+      <a href="#contact-section">Contact Us</a>
     </div>
     <div class="nav-cta">
-      <button class="btn-primary open-booking-modal" style="border:none; padding:10px 24px;">Book Free Session</button>
+      <button class="btn-primary open-booking-modal" style="border:none; padding:10px 24px;">Free Session</button>
     </div>
     <div class="hamburger" onclick="toggleMenu()">☯</div>
   </div>
 </nav>
 
-<!-- HERO SECTION (CTA opens modal) -->
+<!-- HERO SECTION (trainer name & location integrated) -->
 <section style="position: relative; background: #1a2e2c; min-height: 80vh; display: flex; align-items: center; color: white;">
   <div style="position: absolute; inset:0; background-image: url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center;"></div>
   <!-- overlay with pink/yellow tint -->
   <div style="position: absolute; inset:0; background: linear-gradient(to right, rgba(232,62,140,0.3), rgba(255,193,7,0.3));"></div>
   <div class="container" style="position: relative; z-index: 2; width:100%;">
     <div style="max-width: 700px;">
-      <h1 style="font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1.2;">Find Your Calm. Move Your Body. Transform Your Life.</h1>
-      <p style="font-size: 1.5rem; margin: 24px 0; opacity: 0.9;">In-studio and online yoga classes for all levels. Your first session is free.</p>
+      <h1 style="font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1.2;">Find Your Calm. Move Your Body. With Palvi Gulati.</h1>
+      <p style="font-size: 1.5rem; margin: 24px 0; opacity: 0.9;">Ashtanga · Prenatal · Postnatal yoga • Jammu | 8+ years experience</p>
       <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-        <button class="btn-primary open-booking-modal" style="font-size: 1.2rem; padding: 16px 40px; border:none;">Claim Your Free Session →</button>
-        <a href="#" style="color: white; font-weight: 500; text-decoration: underline; text-underline-offset: 8px; align-self: center;">Browse all classes</a>
+        <button class="btn-primary open-booking-modal" style="font-size: 1.2rem; padding: 16px 40px; border:none;">🙏 Claim Free Session →</button>
+        <a href="#classes-section" style="color: white; font-weight: 500; text-decoration: underline; text-underline-offset: 8px; align-self: center;">Explore Programs</a>
       </div>
       <div style="margin-top: 48px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
         <span style="color: var(--accent); letter-spacing: 4px;">★★★★★</span>
@@ -420,62 +445,58 @@
     <div class="grid-3">
       <div class="card" style="text-align: center; border-top: 4px solid var(--accent);">
         <div style="font-size: 3rem;">🧘</div>
-        <h3 style="margin: 16px 0 8px;">Expert Instructors</h3>
-        <p style="color: var(--neutral-500);">Certified teachers who meet you where you are.</p>
+        <h3 style="margin: 16px 0 8px;">Expert Instructor</h3>
+        <p style="color: var(--neutral-500);">Palvi Gulati, E-RYT 500, certified prenatal & postnatal specialist.</p>
       </div>
       <div class="card" style="text-align: center; border-top: 4px solid var(--primary);">
         <div style="font-size: 3rem;">🏠</div>
-        <h3 style="margin: 16px 0 8px;">Flexible Options</h3>
-        <p style="color: var(--neutral-500);">In-studio or stream from anywhere.</p>
+        <h3 style="margin: 16px 0 8px;">Jammu Studio & Online</h3>
+        <p style="color: var(--neutral-500);">In-studio or stream from home — same personal guidance.</p>
       </div>
       <div class="card" style="text-align: center; border-top: 4px solid var(--accent);">
         <div style="font-size: 3rem;">❤️</div>
-        <h3 style="margin: 16px 0 8px;">Real Results</h3>
-        <p style="color: var(--neutral-500);">Less stress, better sleep, stronger body.</p>
+        <h3 style="margin: 16px 0 8px;">Women's wellness</h3>
+        <p style="color: var(--neutral-500);">Safe prenatal & postnatal care, plus general wellness for all.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CLASS SHOWCASE (View Schedule links removed) -->
-<section class="section-padding" style="background: var(--neutral-100);">
+<!-- CLASS SHOWCASE (Programs section with id for anchor) -->
+<section id="classes-section" class="section-padding" style="background: var(--neutral-100); scroll-margin-top: 80px;">
   <div class="container">
-    <h2 style="font-size: 2.5rem; margin-bottom: 48px;">Classes for every body</h2>
+    <h2 style="font-size: 2.5rem; margin-bottom: 48px;">Specialised classes with Palvi</h2>
     <div class="grid-4">
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?q=80&w=2070&auto=format&fit=crop" class="placeholder" style="aspect-ratio:1/1;" alt="hatha">
-        <div style="margin-top: 16px;"><span class="badge">Beginner</span></div>
-        <h3 style="margin: 12px 0 4px;">Hatha Yoga</h3>
-        <p style="color: var(--neutral-500);">Foundations & alignment.</p>
-        <!-- removed View Schedule link -->
+        <img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?q=80&w=2070&auto=format&fit=crop" class="placeholder" style="aspect-ratio:1/1;" alt="ashtanga">
+        <div style="margin-top: 16px;"><span class="badge">Ashtanga</span></div>
+        <h3 style="margin: 12px 0 4px;">Mysore style</h3>
+        <p style="color: var(--neutral-500);">Traditional Ashtanga, self-practice with guidance.</p>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1593810450967-f9c42742e326?q=80&w=2070&auto=format&fit=crop" class="placeholder" style="aspect-ratio:1/1;" alt="vinyasa">
+        <img src="https://images.unsplash.com/photo-1593810450967-f9c42742e326?q=80&w=2070&auto=format&fit=crop" class="placeholder" style="aspect-ratio:1/1;" alt="prenatal">
+        <div style="margin-top: 16px;"><span class="badge">Prenatal</span></div>
+        <h3 style="margin: 12px 0 4px;">Prenatal Yoga</h3>
+        <p style="color: var(--neutral-500);">Safe, supportive for every trimester.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop" class="placeholder" style="aspect-ratio:1/1;" alt="postnatal">
+        <div style="margin-top: 16px;"><span class="badge">Postnatal</span></div>
+        <h3 style="margin: 12px 0 4px;">Postnatal recovery</h3>
+        <p style="color: var(--neutral-500);">Rebuild strength, heal & reconnect.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=2070&auto=format&fit=crop" class="placeholder" style="aspect-ratio:1/1;" alt="hatha">
         <div style="margin-top: 16px;"><span class="badge">All Levels</span></div>
-        <h3 style="margin: 12px 0 4px;">Vinyasa Flow</h3>
-        <p style="color: var(--neutral-500);">Dynamic, breath-led movement.</p>
-        <!-- removed View Schedule link -->
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop" class="placeholder" style="aspect-ratio:1/1;" alt="yin">
-        <div style="margin-top: 16px;"><span class="badge">Relax</span></div>
-        <h3 style="margin: 12px 0 4px;">Yin & Restorative</h3>
-        <p style="color: var(--neutral-500);">Deep relaxation, stress release.</p>
-        <!-- removed View Schedule link -->
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=2070&auto=format&fit=crop" class="placeholder" style="aspect-ratio:1/1;" alt="morning power">
-        <div style="margin-top: 16px;"><span class="badge">Energizing</span></div>
-        <h3 style="margin: 12px 0 4px;">Morning Power</h3>
-        <p style="color: var(--neutral-500);">30-min sessions to start your day.</p>
-        <!-- removed View Schedule link -->
+        <h3 style="margin: 12px 0 4px;">Hatha & Mindfulness</h3>
+        <p style="color: var(--neutral-500);">Foundations, flexibility & stress relief.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS section -->
-<section class="section-padding" style="background: var(--primary-light);">
+<section id="about" class="section-padding" style="background: var(--primary-light); scroll-margin-top: 70px;">
   <div class="container">
     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
       <h2 style="font-size: 2.5rem;">What our students say</h2>
@@ -484,47 +505,85 @@
     <div class="grid-3" style="margin-top: 40px;">
       <div class="card">
         <span style="color: var(--accent);">★★★★★</span>
-        <p style="margin: 16px 0;">"I went from never exercising to attending 4 classes a week. My anxiety has reduced so much."</p>
-        <div><span style="font-weight: 600;">Priya Sharma</span> · Mumbai</div>
+        <p style="margin: 16px 0;">"Palvi di's prenatal classes were a blessing. I felt strong and calm throughout my pregnancy."</p>
+        <div><span style="font-weight: 600;">Simran Kour</span> · Trikuta Nagar</div>
       </div>
       <div class="card">
         <span style="color: var(--accent);">★★★★★</span>
-        <p style="margin: 16px 0;">"The online classes mean I can practice at 6am before work. Truly life-changing."</p>
-        <div><span style="font-weight: 600;">Rahul Verma</span> · Delhi</div>
+        <p style="margin: 16px 0;">"After my back injury, Palvi helped me rebuild step by step. True expert and very caring."</p>
+        <div><span style="font-weight: 600;">Rohit Sharma</span> · Gandhi Nagar</div>
       </div>
       <div class="card">
         <span style="color: var(--accent);">★★★★★</span>
-        <p style="margin: 16px 0;">"I was a complete beginner. The instructors made me feel welcome from day one."</p>
-        <div><span style="font-weight: 600;">Anjali Desai</span> · Bengaluru</div>
+        <p style="margin: 16px 0;">"The Ashtanga guided sessions are transformative. So grateful to have this studio in Jammu."</p>
+        <div><span style="font-weight: 600;">Anjali Charak</span> · Canal Road</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MEET YOUR TEACHER (new section) -->
+<!-- MEET YOUR TEACHER (custom details) -->
 <section class="section-padding" style="background: var(--white);">
   <div class="container">
-    <h2 style="font-size: 2.5rem; margin-bottom: 40px;">Meet Your Teacher</h2>
+    <h2 style="font-size: 2.5rem; margin-bottom: 40px;">Meet Palvi Gulati</h2>
     <div style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap;">
       <div style="flex: 1; min-width: 280px;">
-        <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=2070&auto=format&fit=crop" alt="Teacher Samantha Kaur" style="border-radius: 50%; width: 100%; max-width: 360px; aspect-ratio: 1/1; object-fit: cover; box-shadow: var(--shadow-hover); border: 4px solid var(--accent);">
+        <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=2070&auto=format&fit=crop" alt="Palvi Gulati" style="border-radius: 50%; width: 100%; max-width: 360px; aspect-ratio: 1/1; object-fit: cover; box-shadow: var(--shadow-hover); border: 4px solid var(--accent);">
       </div>
       <div style="flex: 2; min-width: 300px;">
-        <h3 style="font-size: 2.2rem; color: var(--primary-dark);">Samantha Kaur</h3>
-        <p style="color: var(--primary); font-weight: 600; font-size: 1.2rem; margin-bottom: 16px;">E-RYT 500, Yoga Therapist</p>
-        <p style="color: var(--neutral-500); margin-bottom: 20px; font-size: 1.1rem;">With over 15 years of teaching experience, Samantha combines traditional Hatha yoga with modern mindfulness practices. Her classes are known for being accessible, grounding, and often sprinkled with laughter. She believes yoga is for every body and every age.</p>
-        <p style="color: var(--neutral-500); font-style: italic; background: var(--primary-light); padding: 20px; border-radius: 40px;">"Yoga helped me heal after a back injury, and now I’m passionate about sharing that healing with others. I can't wait to meet you on the mat."</p>
+        <h3 style="font-size: 2.2rem; color: var(--primary-dark);">Palvi Gulati <span style="font-size: 1.2rem; color: var(--primary);">(E-RYT 500)</span></h3>
+        <p style="color: var(--primary); font-weight: 600; font-size: 1.2rem; margin-bottom: 16px;">8+ years · Ashtanga, Prenatal & Postnatal specialist</p>
+        <p style="color: var(--neutral-500); margin-bottom: 20px; font-size: 1.1rem;">I am Palvi Gulati, a certified Ashtanga, prenatal, and postnatal yoga teacher based in Jammu. I have been running my own yoga studio for the past eight years, helping people improve their physical health, mental well-being, and overall lifestyle through yoga. I specialize in supporting women during pregnancy and postnatal recovery with safe and effective practices, while also guiding students of all levels to build strength, flexibility, and mindfulness in their daily lives. 🧘‍♀️🌿</p>
+        <p style="color: var(--neutral-500); font-style: italic; background: var(--primary-light); padding: 20px; border-radius: 40px;">"Yoga is for every body and every age — come as you are."</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FREE OFFER LEAD MAGNET (yellow button) -->
+<!-- FREE OFFER LEAD MAGNET -->
 <section style="background: var(--primary-dark); color: white; padding: 80px 24px;">
   <div class="container" style="text-align: center; max-width: 700px;">
     <h2 style="font-size: 3rem; margin-bottom: 16px;">Your first session is completely free</h2>
-    <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 32px;">No experience needed. No commitment. Just show up.</p>
+    <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 32px;">In-studio at Trikuta Nagar or online. No commitment.</p>
     <button class="btn-primary open-booking-modal" style="background: var(--accent); color: #1e2a2a; padding: 16px 36px; font-size:1.2rem; border:none;">Claim Your Free Session →</button>
+  </div>
+</section>
+
+<!-- BUSINESS ADDRESS, CONTACT & TIMINGS (Contact Us anchor) -->
+<section id="contact-section" class="section-padding" style="background: #f9f1f5; scroll-margin-top: 70px;">
+  <div class="container">
+    <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Visit us in Jammu</h2>
+    <div class="business-address">
+      <i class="fas fa-map-pin" style="color: var(--primary); margin-right: 10px;"></i>
+      <strong>Studio:</strong> Hno. 84, Sec-1, Trikuta Nagar, Near SBI Bank, Jammu - 180020
+    </div>
+    <div class="contact-icon-row">
+      <a href="tel:+917006647404"><i class="fas fa-phone-alt"></i> +91 70066 47404</a>
+      <a href="https://wa.me/917006647404" target="_blank"><i class="fab fa-whatsapp"></i> +91 70066 47404 (WhatsApp)</a>
+    </div>
+    
+    <!-- Updated timings: Morning 7am-10am, Evening 4pm-6:30pm -->
+    <div style="margin: 30px 0 10px;">
+      <span class="timing-badge"><i class="fas fa-sun"></i> Morning: 7:00 AM – 10:00 AM</span>
+      <span class="timing-badge"><i class="fas fa-moon"></i> Evening: 4:00 PM – 6:30 PM</span>
+    </div>
+    <p style="margin-top: 8px;"><i class="fas fa-phone-alt" style="color: var(--primary);"></i> <strong>Call to confirm</strong> — slots fill fast.</p>
+  </div>
+</section>
+
+<!-- GOOGLE MAP with exact link & address -->
+<section class="section-padding" style="background: var(--neutral-100);">
+  <div class="container">
+    <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Find the studio</h2>
+    <p style="color: var(--neutral-500); max-width: 600px; margin-bottom: 24px;">Hno. 84, Sector 1, Trikuta Nagar (near SBI Bank). Come say namaste 👋</p>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps?q=Trikuta+Nagar+Jammu+India&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div style="display: flex; justify-content: center; margin: 16px 0;">
+      <a href="https://maps.app.goo.gl/L2S2d1RtLk7yLMWJ8" target="_blank" rel="noopener" class="btn-outline" style="display: inline-flex; align-items: center; gap: 8px;">
+        <i class="fas fa-map-marker-alt"></i> Open in Google Maps (exact location)
+      </a>
+    </div>
   </div>
 </section>
 
@@ -535,83 +594,70 @@
     <div class="faq-list">
       <div class="faq-item" style="margin-bottom: 16px;">
         <div class="faq-question" onclick="toggleFaq(this)">I've never done yoga before — is this for me? <span>▼</span></div>
-        <div class="faq-answer">Absolutely! Our beginners’ classes are designed just for you. All levels welcome.</div>
+        <div class="faq-answer">Absolutely! Palvi welcomes absolute beginners, including special prenatal/postnatal modifications.</div>
       </div>
       <div class="faq-item" style="margin-bottom: 16px;">
         <div class="faq-question" onclick="toggleFaq(this)">What do I need to bring? <span>▼</span></div>
-        <div class="faq-answer">Just yourself. We have mats and props, but feel free to bring your own.</div>
+        <div class="faq-answer">Just yourself. Mats and props available. Wear comfortable clothes.</div>
       </div>
       <div class="faq-item" style="margin-bottom: 16px;">
-        <div class="faq-question" onclick="toggleFaq(this)">Do you offer classes online? <span>▼</span></div>
-        <div class="faq-answer">Yes! Full digital library and live streams via our Online Studio membership.</div>
+        <div class="faq-question" onclick="toggleFaq(this)">Do you offer online classes? <span>▼</span></div>
+        <div class="faq-answer">Yes, live online sessions via Zoom. Perfect if you're not in Jammu.</div>
       </div>
       <div class="faq-item" style="margin-bottom: 16px;">
-        <div class="faq-question" onclick="toggleFaq(this)">Can I try before committing? <span>▼</span></div>
-        <div class="faq-answer">Of course. Your first class is free, and we have drop-in options.</div>
+        <div class="faq-question" onclick="toggleFaq(this)">How to book a free trial? <span>▼</span></div>
+        <div class="faq-answer">Click any "Free Session" button, fill your name & WhatsApp — Palvi will text you to confirm.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GOOGLE MAP SECTION -->
-<section class="section-padding" style="background: var(--neutral-100);">
-  <div class="container">
-    <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Find our studio</h2>
-    <p style="color: var(--neutral-500); max-width: 600px; margin-bottom: 24px;">We’re conveniently located in the heart of the city. Come visit us for a free session.</p>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps?q=Yoga+studio+India&output=embed" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div style="display: flex; justify-content: center; margin-top: 16px;">
-      <a href="https://maps.app.goo.gl/L2S2d1RtLk7yLMWJ8" target="_blank" rel="noopener" class="btn-outline" style="display: inline-flex; align-items: center; gap: 8px;">
-        <i class="fas fa-map-marker-alt"></i> Open in Google Maps (exact location)
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER (newsletter removed) -->
+<!-- FOOTER (contact details + copyright + Instagram link) -->
 <footer style="background: var(--neutral-100); padding: 60px 24px 24px;">
   <div class="container">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
       <div>
         <div style="font-family: 'Playfair Display'; font-size: 2rem; font-weight: 700; color: var(--primary-dark);">Yoga Essence</div>
-        <p style="margin: 16px 0; color: var(--neutral-500);">Accessible, transformative yoga for real life.</p>
+        <p style="margin: 16px 0; color: var(--neutral-500);">Guided by Palvi Gulati — 8+ years, Jammu.</p>
         <div style="display: flex; gap: 16px;">
-          <i class="fab fa-instagram"></i> <i class="fab fa-youtube"></i> <i class="fab fa-facebook"></i>
+          <!-- Instagram icon with correct profile link -->
+          <a href="https://www.instagram.com/yogaessence20" target="_blank" style="color: var(--primary-dark); text-decoration: none; font-size: 1.8rem;"><i class="fab fa-instagram"></i></a>
+          <i class="fab fa-youtube" style="font-size: 1.8rem; color: var(--neutral-500);"></i> 
+          <i class="fab fa-facebook" style="font-size: 1.8rem; color: var(--neutral-500);"></i>
         </div>
+        <p style="margin-top: 10px;"><a href="https://www.instagram.com/yogaessence20" target="_blank" style="color: var(--primary);">@yogaessence20</a></p>
       </div>
       <div>
-        <h4>Classes</h4>
+        <h4>Contact</h4>
         <ul style="list-style: none; margin-top: 16px;">
-          <li><a href="#" style="color: var(--neutral-500); text-decoration: none;">Schedule</a></li>
-          <li><a href="#" style="color: var(--neutral-500); text-decoration: none;">Online</a></li>
-          <li><a href="#" style="color: var(--neutral-500); text-decoration: none;">Workshops</a></li>
+          <li><a href="tel:+917006647404" style="color: var(--neutral-500); text-decoration: none;">📞 +91 70066 47404</a></li>
+          <li><a href="https://wa.me/917006647404" style="color: var(--neutral-500); text-decoration: none;">💬 WhatsApp</a></li>
+          <li style="color: var(--neutral-500);">84, Trikuta Nagar, Jammu</li>
         </ul>
       </div>
       <div>
-        <h4>Company</h4>
+        <h4>Quick links</h4>
         <ul style="list-style: none; margin-top: 16px;">
-          <li><a href="#" style="color: var(--neutral-500); text-decoration: none;">About</a></li>
-          <li><a href="#" style="color: var(--neutral-500); text-decoration: none;">Testimonials</a></li>
-          <li><a href="#" style="color: var(--neutral-500); text-decoration: none;">Contact</a></li>
+          <li><a href="#about" style="color: var(--neutral-500); text-decoration: none;">About Palvi</a></li>
+          <li><a href="#classes-section" style="color: var(--neutral-500); text-decoration: none;">Programs</a></li>
+          <li><a href="#contact-section" style="color: var(--neutral-500); text-decoration: none;">Contact Us</a></li>
         </ul>
       </div>
-      <!-- newsletter div removed -->
     </div>
     <hr style="margin: 48px 0 24px; border: 1px solid rgba(0,0,0,0.05);">
     <div style="display: flex; justify-content: space-between; flex-wrap: wrap; color: var(--neutral-500);">
-      <span>© 2025 Yoga Essence. All rights reserved.</span>
+      <span>© 2025 Yoga Essence (Palvi Gulati). All rights reserved.</span>
       <span>Privacy · Terms</span>
     </div>
   </div>
 </footer>
 
-<!-- MODAL POPUP for WhatsApp booking -->
+<!-- MODAL POPUP for WhatsApp booking (with coach number updated) -->
 <div id="bookingModal" class="modal-overlay">
   <div class="modal-card">
     <span class="modal-close" onclick="closeModal()">&times;</span>
     <h3>Book your free session</h3>
-    <p>We'll ping you on WhatsApp to confirm your slot.</p>
+    <p>Palvi will confirm your slot on WhatsApp.</p>
     <input type="text" id="modalName" placeholder="Your name" required>
     <input type="tel" id="modalWhatsapp" placeholder="WhatsApp number (with country code)" required>
     <button class="btn-primary" id="sendWhatsAppBtn" style="width:100%;">Send via WhatsApp</button>
@@ -642,8 +688,8 @@
   const whatsappInput = document.getElementById('modalWhatsapp');
   const sendBtn = document.getElementById('sendWhatsAppBtn');
 
-  // Coach WhatsApp number (replace with actual)
-  const COACH_NUMBER = '919999999999'; // e.g., 919876543210 (without +)
+  // Coach WhatsApp number (your exact number)
+  const COACH_NUMBER = '917006647404';  // +91 7006647404 without '+' or spaces
 
   function openModal() {
     modal.style.display = 'flex';
@@ -667,7 +713,7 @@
     }
     // Basic WhatsApp number cleanup
     const cleanWA = wa.replace(/[^0-9+]/g, '');
-    const message = `Hi, I'm ${name} and my WhatsApp is ${cleanWA}. I'd like to book a free yoga session.`;
+    const message = `Hi Palvi, I'm ${name} (${cleanWA}). I'd like to book my free yoga session at your Jammu studio.`;
     const url = `https://wa.me/${COACH_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
     closeModal();
@@ -687,6 +733,7 @@
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
   }
+  .business-address i, .contact-icon-row i { margin-right: 6px; }
 </style>
 </body>
 </html>
