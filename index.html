@@ -371,6 +371,44 @@
       margin-bottom: 10px;
       border: 1px solid var(--primary-light);
     }
+
+    /* Certificate gallery */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .cert-item {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 16px;
+      box-shadow: var(--shadow-card);
+      transition: 0.3s;
+      text-align: center;
+    }
+    .cert-item:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+    .cert-item img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 2px solid var(--primary-light);
+    }
+    .cert-item p {
+      margin-top: 12px;
+      font-weight: 500;
+      color: var(--primary-dark);
+    }
+    @media (max-width: 768px) {
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -522,19 +560,46 @@
   </div>
 </section>
 
-<!-- MEET YOUR TEACHER (custom details) -->
+<!-- MEET YOUR TEACHER (custom details) – UPDATED IMAGE -->
 <section class="section-padding" style="background: var(--white);">
   <div class="container">
     <h2 style="font-size: 2.5rem; margin-bottom: 40px;">Meet Palvi Gulati</h2>
     <div style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap;">
       <div style="flex: 1; min-width: 280px;">
-        <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?q=80&w=2070&auto=format&fit=crop" alt="Palvi Gulati" style="border-radius: 50%; width: 100%; max-width: 360px; aspect-ratio: 1/1; object-fit: cover; box-shadow: var(--shadow-hover); border: 4px solid var(--accent);">
+        <!-- Replaced image with the new Natarajasana pose image -->
+        <img src="https://i.ibb.co/twJpPkz0/Natrajasana-also-called-lord-of-dance-pose-is-a-standing-balancing-backbend-pose-that-aids-i.jpg" alt="Palvi Gulati in Natarajasana (Lord of the Dance pose)" style="border-radius: 50%; width: 100%; max-width: 360px; aspect-ratio: 1/1; object-fit: cover; box-shadow: var(--shadow-hover); border: 4px solid var(--accent);">
       </div>
       <div style="flex: 2; min-width: 300px;">
         <h3 style="font-size: 2.2rem; color: var(--primary-dark);">Palvi Gulati <span style="font-size: 1.2rem; color: var(--primary);">(E-RYT 500)</span></h3>
         <p style="color: var(--primary); font-weight: 600; font-size: 1.2rem; margin-bottom: 16px;">8+ years · Ashtanga, Prenatal & Postnatal specialist</p>
         <p style="color: var(--neutral-500); margin-bottom: 20px; font-size: 1.1rem;">I am Palvi Gulati, a certified Ashtanga, prenatal, and postnatal yoga teacher based in Jammu. I have been running my own yoga studio for the past eight years, helping people improve their physical health, mental well-being, and overall lifestyle through yoga. I specialize in supporting women during pregnancy and postnatal recovery with safe and effective practices, while also guiding students of all levels to build strength, flexibility, and mindfulness in their daily lives. 🧘‍♀️🌿</p>
         <p style="color: var(--neutral-500); font-style: italic; background: var(--primary-light); padding: 20px; border-radius: 40px;">"Yoga is for every body and every age — come as you are."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW SECTION: CERTIFICATES & TRAINING (added below Meet Palvi Gulati) -->
+<section class="section-padding" style="background: var(--neutral-100);">
+  <div class="container">
+    <h2 style="font-size: 2.5rem; text-align: center;">📜 Certifications & training</h2>
+    <p style="text-align: center; color: var(--neutral-500); max-width: 700px; margin: 16px auto 0;">Internationally recognised credentials – Palvi’s dedication to authentic yoga.</p>
+    
+    <div class="cert-grid">
+      <!-- certificate 1 -->
+      <div class="cert-item">
+        <img src="https://i.ibb.co/Z6vq7wDn/IMG-20260317-133424.jpg" alt="Yoga certification 1">
+        <p>RYT 500 · Ashtanga Yoga</p>
+      </div>
+      <!-- certificate 2 -->
+      <div class="cert-item">
+        <img src="https://i.ibb.co/1GjTdH0F/IMG-20260317-141428.jpg" alt="Yoga certification 2">
+        <p>Prenatal & Postnatal Specialist</p>
+      </div>
+      <!-- certificate 3 -->
+      <div class="cert-item">
+        <img src="https://i.ibb.co/Ldm3vC14/IMG-20260317-141447.jpg" alt="Yoga certification 3">
+        <p>Yoga Alliance · Continuing Education</p>
       </div>
     </div>
   </div>
